@@ -12,7 +12,7 @@ class AlphabetTest < Minitest::Test
   def test_eng_to_braille
     alphabet = Alphabet.new
 
-    expected = ["0.\n", "..\n", ".."]
-    assert_equal expected, alphabet.characters["a"]
+    expected_a = ["0.\n", "..\n", ".."]
+    assert_equal expected_a, alphabet.characters["a"]
   end
 end
