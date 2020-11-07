@@ -41,7 +41,14 @@ class TranslatorTest < Minitest::Test
         "z" => ["0.\n", ".0\n", "00"],
         }
 
-    assert_equal expected_hash, translator.alphabet.eng_to_braille
+    assert_equal expected_hash, translator.alphabet.letters
     assert_instance_of Alphabet, translator.alphabet
+  end
+
+  def test_can_translate_eng_to_braille
+    translator = Translator.new
+
+    expected_a = ["0.\n", "..\n", ".."]
+    assert_equal expected_a, translator.eng_to_braille("a")
   end
 end
