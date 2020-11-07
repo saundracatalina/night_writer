@@ -17,15 +17,15 @@ class AlphabetTest < Minitest::Test
     expected_x = ["00\n", "..\n", "00"]
     expected_z = ["0.\n", ".0\n", "00"]
 
-    assert_equal expected_a, alphabet.characters["a"]
-    assert_equal expected_b, alphabet.characters["b"]
-    assert_equal expected_x, alphabet.characters["x"]
-    assert_equal expected_z, alphabet.characters["z"]
+    assert_equal expected_a, alphabet.eng_to_braille["a"]
+    assert_equal expected_b, alphabet.eng_to_braille["b"]
+    assert_equal expected_x, alphabet.eng_to_braille["x"]
+    assert_equal expected_z, alphabet.eng_to_braille["z"]
   end
 
   def test_length_of_braille_chars
     alphabet = Alphabet.new
     
-    assert_equal 3, alphabet.characters["a"].length
+    assert_equal 3, alphabet.eng_to_braille["a"].length
   end
 end

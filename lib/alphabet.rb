@@ -1,8 +1,8 @@
 class Alphabet
-  attr_reader :characters
+  attr_reader :eng_to_braille
 
   def initialize
-    @characters = {
+    @eng_to_braille = {
         "a" => ["0.\n", "..\n", ".."],
         "b" => ["0.\n", "0.\n", ".."],
         "c" => ["00\n", "..\n", ".."],
