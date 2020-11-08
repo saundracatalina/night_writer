@@ -12,11 +12,11 @@ class AlphabetTest < Minitest::Test
   def test_eng_to_braille
     alphabet = Alphabet.new
 
-    expected_a = ["0.\n", "..\n", ".."]
-    expected_b = ["0.\n", "0.\n", ".."]
-    expected_x = ["00\n", "..\n", "00"]
-    expected_z = ["0.\n", ".0\n", "00"]
-    expected_space = ["..\n", "..\n", ".."]
+    expected_a = ["0.", "..", ".."]
+    expected_b = ["0.", "0.", ".."]
+    expected_x = ["00", "..", "00"]
+    expected_z = ["0.", ".0", "00"]
+    expected_space = ["..", "..", ".."]
 
     assert_equal expected_a, alphabet.letters["a"]
     assert_equal expected_b, alphabet.letters["b"]
