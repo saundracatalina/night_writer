@@ -8,7 +8,7 @@ class Translator
   end
 
   def eng_to_braille(words)
-    characters = words.chars
+    characters = words[0].chars
     first_row = []
     second_row = []
     third_row = []
