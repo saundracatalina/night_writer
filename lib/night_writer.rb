@@ -18,15 +18,29 @@ class NightWriter
     braille.close
   end
 
-  def message_to_terminal
+  def read_new_files_content
     lines = File.readlines(ARGV[1])
     line_content = lines.map do |line|
       line.chomp
     end
     text = line_content.join
-    text_count = text.size
+    text
+  end
+
+  def message_to_terminal
+    text_count = read_new_files_content.size    
     puts "Created #{ARGV[1].inspect} containing #{text_count} characters"
   end
+
+  # def message_to_terminal
+  #   lines = File.readlines(ARGV[1])
+  #   line_content = lines.map do |line|
+  #     line.chomp
+  #   end
+  #   text = line_content.join
+  #   text_count = text.size
+  #   puts "Created #{ARGV[1].inspect} containing #{text_count} characters"
+  # end
 end
 
 nightwriter = NightWriter.new
