@@ -8,7 +8,7 @@ class Translator
   end
 
   def eng_to_braille(words)
-    characters = words[0..-1].chars
+    characters = words[0..-1].chomp.chars
     first_row = []
     second_row = []
     third_row = []
@@ -20,5 +20,18 @@ class Translator
       end
     end
     braille_type = "#{first_row.join}\n#{second_row.join}\n#{third_row.join}"
+    # require "pry"; binding.pry
+    # until third_row.length == 2
+    # require "pry"; binding.pry
+    # end
+  end
+
+  def join_file_lines(file)
+    lines = File.readlines(file)
+    line_content = lines.map do |line|
+      line.chomp
+    end
+    text = line_content.join
+    text
   end
 end
