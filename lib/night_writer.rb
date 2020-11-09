@@ -7,7 +7,7 @@ class NightWriter
     @translator = Translator.new
   end
 
-  def read_and_write_new_file
+  def read_eng_and_write_new_file
     message = File.open(ARGV[0], "r")
     english = message.read
     message.close
@@ -26,5 +26,5 @@ class NightWriter
 end
 
 nightwriter = NightWriter.new
-nightwriter.read_and_write_new_file
+nightwriter.read_eng_and_write_new_file
 nightwriter.message_to_terminal
