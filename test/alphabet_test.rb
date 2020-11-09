@@ -30,4 +30,12 @@ class AlphabetTest < Minitest::Test
 
     assert_equal 3, alphabet.letters["a"].length
   end
+
+  def test_braille_letters
+    alphabet = Alphabet.new
+
+    br_a = ["0.", "..", ".."]
+
+    assert_equal "a", alphabet.braille_letters[br_a]
+  end
 end
