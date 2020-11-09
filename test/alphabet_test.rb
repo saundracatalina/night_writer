@@ -35,7 +35,15 @@ class AlphabetTest < Minitest::Test
     alphabet = Alphabet.new
 
     br_a = ["0.", "..", ".."]
+    br_b = ["0.", "0.", ".."]
+    br_x = ["00", "..", "00"]
+    br_z = ["0.", ".0", "00"]
+    br_space = ["..", "..", ".."]
 
     assert_equal "a", alphabet.braille_letters[br_a]
+    assert_equal "b", alphabet.braille_letters[br_b]
+    assert_equal "x", alphabet.braille_letters[br_x]
+    assert_equal "z", alphabet.braille_letters[br_z]
+    assert_equal " ", alphabet.braille_letters[br_space]
   end
 end
