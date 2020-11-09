@@ -59,11 +59,11 @@ class TranslatorTest < Minitest::Test
     assert_equal expected_sentence, translator.eng_to_braille("hello world")
   end
 
-  def test_can_insert_line_breaks
-    translator = Translator.new
-    translator.eng_to_braille("aaa")
-    translator.insert_line_breaks
-    expected = "0.0.\n....\n....\n0.\n..\n.."
-    assert_equal expected, translator.eng_to_braille("aaa")
-  end
+  # def test_can_insert_line_breaks
+  #   translator = Translator.new
+  #   translator.eng_to_braille("aaa")
+  #   translator.insert_line_breaks
+  #   expected = "0.0.\n....\n....\n0.\n..\n.."
+  #   assert_equal expected, translator.eng_to_braille("aaa")
+  # end
 end

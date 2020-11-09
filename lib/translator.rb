@@ -1,19 +1,16 @@
 require "./lib/alphabet"
 
 class Translator
-  attr_reader :alphabet,
-              :first_row,
-              :second_row,
-              :third_row
+  attr_reader :alphabet
 
   def initialize
     @alphabet = Alphabet.new
-    @first_row = []
-    @second_row = []
-    @third_row = []
   end
 
   def eng_to_braille(words)
+    first_row = []
+    second_row = []
+    third_row = []
     characters = words[0..-1].chomp.chars
     characters.each do |character|
       @alphabet.letters.map do |letter, braille|
