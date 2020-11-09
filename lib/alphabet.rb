@@ -1,5 +1,6 @@
 class Alphabet
-  attr_reader :letters
+  attr_reader :letters,
+              :braille_letters
 
   def initialize
     @letters = {
@@ -31,5 +32,6 @@ class Alphabet
         "z" => ["0.", ".0", "00"],
         " " => ["..", "..", ".."]
         }
+    @braille_letters = {}
   end
 end
