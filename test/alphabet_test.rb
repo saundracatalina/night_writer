@@ -25,7 +25,7 @@ class AlphabetTest < Minitest::Test
     assert_equal expected_space, alphabet.letters[" "]
   end
 
-  def test_length_of_braille_chars
+  def test_length_of_braille_chars_in_letters_hash
     alphabet = Alphabet.new
 
     assert_equal 3, alphabet.letters["a"].length
@@ -45,5 +45,13 @@ class AlphabetTest < Minitest::Test
     assert_equal "x", alphabet.braille_letters[br_x]
     assert_equal "z", alphabet.braille_letters[br_z]
     assert_equal " ", alphabet.braille_letters[br_space]
+  end
+
+  def test_length_of_eng_chars_in_braille_letters_hash
+    alphabet = Alphabet.new
+
+    br_a = ["0.", "..", ".."]
+
+    assert_equal 1, alphabet.braille_letters[br_a].length
   end
 end
