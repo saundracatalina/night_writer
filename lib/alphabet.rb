@@ -32,6 +32,6 @@ class Alphabet
         "z" => ["0.", ".0", "00"],
         " " => ["..", "..", ".."]
         }
-    @braille_letters = {}
+    @braille_letters = letters.invert
   end
 end
