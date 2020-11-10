@@ -40,6 +40,8 @@ class Translator
     end.join
   end
 
+
+
   # def insert_line_breaks(braille)
   # maybe use .chars to create an array to work with
   #   test = braille.insert(6, "\n")
@@ -55,12 +57,5 @@ class Translator
   #   end
   # end
 
-  def join_file_lines(file)
-    lines = File.readlines(file)
-    line_content = lines.map do |line|
-      line.chomp
-    end
-    text = line_content.join
-    text
-  end
+
 end

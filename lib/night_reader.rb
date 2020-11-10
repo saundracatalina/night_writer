@@ -18,9 +18,18 @@ class NightReader
   end
 
   def message_to_terminal
-    text = translator.join_file_lines(ARGV[1])
+    text = join_file_lines(ARGV[1])
     text_count = text.size
     puts "Created #{ARGV[1].inspect} containing #{text_count} characters"
+  end
+
+  def join_file_lines(file)
+    lines = File.readlines(file)
+    line_content = lines.map do |line|
+      line.chomp
+    end
+    text = line_content.join
+    text
   end
 end
 
