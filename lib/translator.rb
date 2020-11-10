@@ -22,6 +22,16 @@ class Translator
     braille_type = "#{first_row.join}\n#{second_row.join}\n#{third_row.join}"
   end
 
+  def braille_to_eng(braille_words)
+    br_strings = braille_words.delete("\n").chars
+    br_strings_combined = br_strings.each_slice(2).to_a
+    br_strings_joined = br_strings_combined.map do |string|
+      string.join
+    end
+    br_strings_joined
+    @alphabet.braille_letters[br_strings_joined]
+  end
+
   # def insert_line_breaks
   #   require "pry"; binding.pry
   #   if join_file_lines(ARGV[1]).size % 12 == 0
