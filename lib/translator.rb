@@ -40,22 +40,28 @@ class Translator
     end.join
   end
 
+  def insert_line_breaks_br(braille)
+    rows = braille.split("\n")
+    num = 4
+    lines = rows.each do |row|
+      row.insert(num, "\n")
+      num -= 1
+    end.join
 
+    # broken_lines = []
+    # lines.each do |line|
+    #   broken_lines << line
+    # end
 
-  # def insert_line_breaks(braille)
-  # maybe use .chars to create an array to work with
-  #   test = braille.insert(6, "\n")
-  #   braille.insert(13, "\n")
-  # end
+    # braille.insert(6, "\n")
+    # braille.insert(13, "\n")
+  end
 
-  # def insert_line_breaks
-  #   require "pry"; binding.pry
-  #   if join_file_lines(ARGV[1]).size % 12 == 0
-  #     "#{first_row.join}\n#{second_row.join}\n#{third_row.join}\n"
-  #   else
-  #     "#{first_row.join}\n#{second_row.join}\n#{third_row.join}"
-  #   end
-  # end
-
-
+  def insert_line_breaks_eng(eng)
+    counter = 0
+    eng.chars.each do |char|
+      char.insert(1, "\n") if counter == 38
+      counter += 1
+    end.join
+  end
 end
