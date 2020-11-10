@@ -15,6 +15,7 @@ class NightReader
     original_message = File.open(ARGV[1], "w")
     original_message.write(english_message)
     original_message.close
+    # @translator.insert_line_breaks_eng(ARGV[1])
   end
 
   def message_to_terminal

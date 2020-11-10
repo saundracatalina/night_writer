@@ -15,7 +15,7 @@ class NightWriter
     braille = File.open(ARGV[1], "w")
     braille.write(translated_message)
     braille.close
-    # @translator.insert_line_breaks(ARGV[1])
+    # @translator.insert_line_breaks_br(ARGV[1])
   end
 
   def message_to_terminal

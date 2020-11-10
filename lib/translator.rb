@@ -40,23 +40,6 @@ class Translator
     end.join
   end
 
-  def insert_line_breaks_br(braille)
-    rows = braille.split("\n")
-    num = 4
-    lines = rows.each do |row|
-      row.insert(num, "\n")
-      num -= 1
-    end.join
-
-    # broken_lines = []
-    # lines.each do |line|
-    #   broken_lines << line
-    # end
-
-    # braille.insert(6, "\n")
-    # braille.insert(13, "\n")
-  end
-
   def insert_line_breaks_eng(eng)
     counter = 0
     eng.chars.each do |char|
@@ -64,4 +47,23 @@ class Translator
       counter += 1
     end.join
   end
+
+  # char.insert(1, "\n") if counter % 39 == 0
+
+  # def insert_line_breaks_br(braille)
+  #   rows = braille.split("\n")
+  #   num = 4
+  #   lines = rows.each do |row|
+  #     row.insert(num, "\n")
+  #     num -= 1
+  #   end.join
+  #
+  #   # broken_lines = []
+  #   # lines.each do |line|
+  #   #   broken_lines << line
+  #   # end
+  #
+  #   # braille.insert(6, "\n")
+  #   # braille.insert(13, "\n")
+  # end
 end
