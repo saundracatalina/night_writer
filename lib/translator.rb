@@ -23,14 +23,30 @@ class Translator
   end
 
   def braille_to_eng(braille_words)
-    br_strings = braille_words.delete("\n").chars
-    br_strings_combined = br_strings.each_slice(2).to_a
-    br_strings_joined = br_strings_combined.map do |string|
-      string.join
+    rows = braille_words.split("\n")
+    collection = []
+    rows.each_slice(3) do |rows|
+      until rows[-1].empty? do
+        rows.each do |row|
+          collection << row.slice!(0..1)
+        end
+      end
     end
-    br_strings_joined
-    @alphabet.braille_letters[br_strings_joined]
+
+    word = collection.each_slice(3).to_a
+
+    word.map do |letter|
+      @alphabet.braille_letters[letter]
+    end.join
   end
+
+  # def insert_line_breaks(braille)
+  # maybe use .chars to create an array to work with
+  #   test = braille.insert(6, "\n")
+  #   braille.insert(13, "\n")
+  # end
+
+
 
   # def insert_line_breaks
   #   require "pry"; binding.pry
